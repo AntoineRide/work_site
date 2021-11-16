@@ -10,7 +10,7 @@ if (isset($_POST['student_name']) && !empty($_POST['student_name'])) {
 
     // Création de l'objet
 
-    $student = new Student($student_name);
+    $student = new Student("Charles", "18");
 
     // Appel de la fonction Search student
 

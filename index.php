@@ -1,6 +1,7 @@
 <?php
 // Intégration des class
 
+require_once("pdo.php");
 require_once("class/Student.php");
 
 // Création de l'objet

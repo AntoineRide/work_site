@@ -4,18 +4,15 @@ class Student
 {
     public $Prenom;
     public $Age;
-
-    /**
-     * @param string $prenom
-     * @param int $age
-     */
+    public $id;
 
     // Function Construct Nom et Prénom
 
-    public function __construct($prenom, $age = 0)
+    public function __construct($prenom, $age = 0, $id = false)
     {
         $this->Prenom = $prenom;
         $this->Age = $age;
+        $this->Id = $id;
     }
 
     /**
@@ -49,7 +46,7 @@ class Student
         if ($firstInput) {
             $students = array([
                 'student_name' => $nom_etudiant,
-                'student_age' => $age_etudiant
+                'student_age' => $age_etudiant,
             ]);
         } else {
             array_push($students, [

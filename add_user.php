@@ -1,8 +1,10 @@
 <?php
 // Intégration des class
 
+require_once("pdo.php");
 require_once('class/Student.php');
-
+require_once('Studentrepository.php');
+/*
 // Récupération add_user.html
 
 $page = file_get_contents("views/add_user.html");
@@ -52,4 +54,17 @@ if (isset($_POST['submit'])) {
 
 // Affichage add_user.html
 
-echo $page;
+echo $page; */
+
+if (!empty($_GET['create'])) {
+    $student = new Student("Antoine", 19, 1);
+
+Studentrepository::addstudent($student);
+}
+
+$students = StudentRepository::DisplayData();
+foreach ($students as $student) {
+    echo $student->Prenom . ' ';
+    echo $student->Age . ' <a href="update.php?id=' . $student->Id . '">MODIFIER</a> <a href="delete.php?id=' . $student->Id . '">SUPPRIMER</a><br />';
+}
+?>
